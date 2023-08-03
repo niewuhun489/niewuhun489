@@ -1,0 +1,25 @@
+
+function rasterizePoint(x,y,z){
+ 
+	var p,d;
+	x-=playerX;
+	y-=playerY;
+	z-=playerZ;
+	p=Math.atan2(x,z);
+	d=Math.sqrt(x*x+z*z);
+	x=Math.sin(p-yaw)*d;
+	z=Math.cos(p-yaw)*d;
+	p=Math.atan2(y,z);
+	d=Math.sqrt(y*y+z*z);
+	y=Math.sin(p-pitch)*d;
+	z=Math.cos(p-pitch)*d;
+	var rx1=-1000,ry1=1,rx2=1000,ry2=1,rx3=0,ry3=0,rx4=x,ry4=z,uc=(ry4-ry3)*(rx2-rx1)-(rx4-rx3)*(ry2-ry1);
+	if(!uc) return {x:0,y:0,d:-1};
+	var ua=((rx4-rx3)*(ry1-ry3)-(ry4-ry3)*(rx1-rx3))/uc;
+	var ub=((rx2-rx1)*(ry1-ry3)-(ry2-ry1)*(rx1-rx3))/uc;
+	if(!z)z=.000000001;
+	if(ua>0&&ua<1&&ub>0&&ub<1){
+
+————————————————
+版权声明：本文为CSDN博主「论恒」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/m0_66674794/article/details/125162172
