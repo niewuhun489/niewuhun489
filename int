@@ -1,0 +1,8 @@
+   static int ORDINAL_PROD_NO;
+    static int ORDINAL_PROD_NAME;
+    static int ORDINAL_PROD_PRICE;
+
+    /** Create the Database.
+     * @return connection for a new Database
+     */
+    private static Connection createDatabase()
