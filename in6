@@ -1,0 +1,7 @@
+   ContentInfo inContentInfo, 
+    BillingInfo inBillingInfo) 
+  throws ContentException 
+  { 
+    // Update content download descriptor 
+    return inContentInfo; 
+  } 
