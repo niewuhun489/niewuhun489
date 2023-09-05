@@ -1,0 +1,4 @@
+jndiCtxFactory = args[5]; 
+      connFactory = args[6]; 
+      providerURL = args[7]; 
+      topicName = args[8]; 
